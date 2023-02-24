@@ -26,18 +26,23 @@ def brute_force(points):
 
 def closest_in_strip(min_distance, closest_pair, left_half, right_half, index):
     mid = (left_half[-1][index] + right_half[0][index]) / 2
-    # closest_pair = None
 
     for p in left_half:
-        if abs(p[0] - mid) < min_distance:
+        if (abs(mid - p[index]) < min_distance):
             for q in right_half:
-                if abs(mid - q[0]) < min_distance and abs(q[1] - p[1]) < min_distance:
-                    d = eucl_dist(p, q)
-                    if d < min_distance:
-                        min_distance = d
-                        closest_pair = (p, q)
-                        # print(min_distance)
-                        # print(closest_pair)
+                if (abs(mid - q[index]) < min_distance):
+                    qualified = True
+
+                    for i in range(len(p)):
+                        if i != index:
+                            if abs(q[i] - p[i]) > min_distance:
+                                qualified = False
+
+                    if qualified :
+                        d = eucl_dist(p, q)
+                        if d < min_distance:
+                            min_distance = d
+                            closest_pair = (p, q)
     return closest_pair, min_distance
 
 
@@ -70,7 +75,7 @@ def closest_pair_divide_conquer(points):
     return closest_pair, min_distance
 
 
-points = [(random.uniform(0, 1000), random.uniform(0, 1000)) for _ in range(1000)]
+points = [tuple(random.uniform(0, 1000) for _ in range(2)) for _ in range(100)]
 
 pair1, dist1 = closest_pair_divide_conquer(points)
 pair2, dist2 = brute_force(points)
