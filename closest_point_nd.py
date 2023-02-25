@@ -90,16 +90,17 @@ def printClosestPoint(type, pair, num_compute, distance, time1, time2):
     execution_time =  (time2 - time1)*10**6
     if execution_time > 500:
         execution_time /= 1000 
-        print(f"Time Execution              : {(execution_time)} mili seconds")
+        print(f"Time Execution              : {(execution_time):.3f} mili seconds")
     else :
-        print(f"Time Execution              : {(execution_time)} micro seconds") 
+        print(f"Time Execution              : {(execution_time):.3f} micro seconds") 
 
 
 
 
-def main():
-    n = int(input("\nNumber of Points            : "))
-    d = int(input("Number of Dimensions        : "))
+def get_closest_point_n_dimension():
+    d = int(input("\nNumber of Dimensions        : "))
+    n = int(input("Number of Points            : "))
+
 
     points = [tuple(random.uniform(-1000, 1000) for _ in range(d)) for _ in range(n)]
 
@@ -112,5 +113,4 @@ def main():
     printClosestPoint("Divide and Conquer", pair1, num_compute1, dist1, time1, time2)
     printClosestPoint("Brute Force", pair2, num_compute2, dist2, time2, time3)
     print()
-
-main()
+    return points, pair1
