@@ -1,6 +1,19 @@
 import math
 import time
 
+def welcome():
+    print()
+    print("\033[34m" + "       ________                     __     ____        _         " + "\033[0m")                                                             
+    print("\033[34m" + "      / ____/ ____  ________  _____/ /_   / __ \____ _(______    " + "\033[0m")                                                             
+    print("\033[34m" + "     / /   / / __ \/ ___/ _ \/ ___/ __/  / /_/ / __ `/ / ___/    " + "\033[0m")                                                             
+    print("\033[35m" + "    / /___/ / /_/ (__  /  __(__  / /_   / ____/ /_/ / / /        " + "\033[0m")                                                             
+    print("\033[35m" + "    \____/_/\_________/\________/\___  /_/  __\__,_/_/_/         " + "\033[0m")                                                             
+    print("\033[36m" + "          ____  / __/  / __ \____  (_____  / /______             " + "\033[0m")                                                             
+    print("\033[36m" + "         / __ \/ /_   / /_/ / __ \/ / __ \/ __/ ___/             " + "\033[0m")                                                             
+    print("\033[37m" + "        / /_/ / __/  / ____/ /_/ / / / / / /_(__  )              " + "\033[0m")                                                             
+    print("\033[37m" + "        \____/_/    /_/    \____/_/_/ /_/\__/____/               " + "\033[0m")
+    print()                                                             
+
 def euclDist(p1, p2, numCompute):
     n = len(p1)
     return math.sqrt(sum([(p1[i]-p2[i])**2 for i in range(n)])), numCompute + 1
@@ -72,7 +85,7 @@ def closestPairDnC(points, idx, numCompute):
     return closestPair, shortestDist, numCompute
 
 def printClosestPoint(type, pair, numCompute, distance, time1, time2):
-    print("\n"+type)
+    print("\n"+"\033[36m"+ type + "\033[0m")
     print(f"Point 1                     : {pair[0]}")
     print(f"Point 2                     : {pair[1]}")
     print(f"Distance                    : {distance}")
@@ -83,6 +96,19 @@ def printClosestPoint(type, pair, numCompute, distance, time1, time2):
         print(f"Time Execution              : {(executionTime):.3f} mili seconds")
     else :
         print(f"Time Execution              : {(executionTime):.3f} micro seconds")
+
+def readPoints(filePath):
+    with open(filePath, 'r') as file:
+        # Membaca baris pertama untuk mendapatkan besar dimensi dan jumlah titik
+        dimensions = tuple(map(int, file.readline().split()))        
+        tuples = ()
+        check = True
+        for i in range(dimensions[1]):
+            rowValues = tuple(map(float, file.readline().replace(',', ' ').split()))
+            if len(rowValues) != dimensions[0] :
+                check = False
+            tuples += rowValues,
+    return dimensions[0], dimensions[1],check, tuples
 
 def getClosestPoint(points):
     time1 = time.perf_counter()

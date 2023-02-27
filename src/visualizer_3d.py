@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def visualize_points(points, pair, distance):
+def visualizePoints3D(points, pair, distance):
     n = len(points)
     x = [points[i][0] for i in range(n)]
     y = [points[j][1] for j in range(n)]
