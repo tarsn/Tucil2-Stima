@@ -1,7 +1,7 @@
 import math
 import time
 
-def eucl_dist(p1, p2, numCompute):
+def euclDist(p1, p2, numCompute):
     n = len(p1)
     return math.sqrt(sum([(p1[i]-p2[i])**2 for i in range(n)])), numCompute + 1
 
@@ -15,7 +15,7 @@ def closestPairBF(points, numCompute):
     closestPair = None
     for i in range(n):
         for j in range(i+1, n):
-            distance, numCompute = eucl_dist(points[i], points[j], numCompute)
+            distance, numCompute = euclDist(points[i], points[j], numCompute)
             if distance < shortestDist:
                 shortestDist = distance
                 closestPair = (points[i], points[j])
@@ -36,7 +36,7 @@ def closestInStrip(shortestDist, closestPair, leftHalf, rightHalf, idx, numCompu
                                 qualified = False
 
                     if qualified:
-                        d, numCompute = eucl_dist(p, q, numCompute)
+                        d, numCompute = euclDist(p, q, numCompute)
                         if d < shortestDist:
                             shortestDist = d
                             closestPair = (p, q)
