@@ -1,1 +1,0 @@
-Input Terminal             : 1

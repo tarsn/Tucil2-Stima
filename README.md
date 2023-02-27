@@ -7,7 +7,9 @@ Program ini akan mencari 2 titik terdekat pada bidang n dimensi dari p jumlah ti
 
 ## Cara Penggunaan
 1. Clone repository ini
-2. Pada folder `\src` jalankan script `python main.py`
+2. Masuk ke folder src
+3. Buka terminal dan pastikan directory sudah `\Tucil2-Stima\src`
+4. Lalu jalankan script `python main.py`
     ```
     python main.py
     ``` 
