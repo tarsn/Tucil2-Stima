@@ -17,8 +17,8 @@ if inp1 == 1 :
     p = int(input("Number of Points > 1        : "))
     points = [tuple(random.uniform(-10000, 10000) for i in range(n)) for i in range(p)]
 elif inp1 == 2 :
-    path = "../test/"
-    nameFile = input("\nInput the file name         : ")
+    path = "test/"
+    nameFile = input("\nPut the file in test folder\nInput the file name (ex: test1.txt) : ")
     if os.path.isfile(path+nameFile):
         n, p, check, points = readPoints(path+nameFile)
     else :

@@ -37,4 +37,3 @@ The program is finished.
 | Program successfully run | ✓ |   |
 | The program can read input / generate itself and provide output | ✓ |   |
 | The solution provided by the program is correct | ✓ |  |
-| Program can save solutions in text files| ✓ |  |
