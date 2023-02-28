@@ -1,19 +1,40 @@
-# Mencari Pasangan Titik Terdekat dengan Algoritma Divide and Conquer
-Program ini akan mencari 2 titik terdekat pada bidang n dimensi dari p jumlah titik yang dibangun dengan menggunakan algoritma Divide and Conquer. Program juga akan membandingkan waktu eksekusi nya dengan algoritma Brute Force, lalu memvisualisasikannya pada bidang 3D.
+# Tugas Kecil 2 Strategi Algoritma - Closest Pair of Point
 
-## Requirement Program
-1. Python
-2. Matplotlib
+Finding the closest pair of points in 2D is a classic problem in computer science which the aim is to find two points that are closest to each other. The shortest distance between two points is known as the minimum distance.
 
-## Cara Penggunaan
-1. Clone repository ini
-2. Masuk ke folder src
-3. Buka terminal dan pastikan directory sudah `\Tucil2-Stima\src`
-4. Lalu jalankan script `python main.py`
-    ```
-    python main.py
-    ``` 
+This program's main goal is to create a program that finds the nearest pair of points in 3D space, but we eventually expanded it to work in n-dimensional space where n is larger than or equal to 1. For three-dimensional space, there is a visualizer that can show the pair of nearest points among a set of points.
 
-## Identitas
-1. Muhammad Hanan - 13521041
-2. Saddam Annais S - 13521121
+## Features
+
+1. Input: The users can choose to input using file or generate random input.
+2. Timing: At the end, the program will output the elapsed time that the program used to execute (exclude users input).
+
+
+## Repository Structure
+1. `src` folder contains the source code (`.py` files).
+2. `test` folder contains the file to input it manually (`.txt` files).
+3. `doc` folder contains report of the project.
+
+## Requirement
+- **Python 3**
+## How to Run
+Open Command Line from the parent directory and execute the jar file using the following command.
+
+```sh
+python .\src\main.py
+```
+## Author
+- Saddam Annais Shaquille | 13521121 | K-01
+- Muhammad Hanan | 13521041 | K-01
+
+
+## Project Status
+The program is finished.
+
+| Poin  | Yes | No |
+|---|---|---|
+| Program can be compiled without error | ✓ |   |
+| Program successfully run | ✓ |   |
+| The program can read input / generate itself and provide output | ✓ |   |
+| The solution provided by the program is correct | ✓ |  |
+| Program can save solutions in text files| ✓ |  |
