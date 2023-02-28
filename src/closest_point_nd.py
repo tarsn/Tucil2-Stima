@@ -43,10 +43,12 @@ def closestInStrip(shortestDist, closestPair, leftHalf, rightHalf, idx, numCompu
                 if (abs(mid - q[idx]) < shortestDist):
                     qualified = True
 
-                    for i in range(len(p)):
+                    i = 0
+                    while i < len(p) and qualified:
                         if i != idx:
                             if abs(q[i] - p[i]) > shortestDist:
-                                qualified = False
+                                qualified = False  
+                        i += 1                 
 
                     if qualified:
                         d, numCompute = euclDist(p, q, numCompute)
