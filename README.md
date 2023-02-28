@@ -18,7 +18,7 @@ This program's main goal is to create a program that finds the nearest pair of p
 ## Requirement
 - **Python 3**
 ## How to Run
-Open Command Line from the parent directory and execute the jar file using the following command.
+Open Command Line from the parent directory and execute the file using the following command.
 
 ```sh
 python .\src\main.py
