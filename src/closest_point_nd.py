@@ -1,5 +1,6 @@
 import math
 import time
+from quicksort import quicksort
 
 def welcome():
     print()
@@ -17,10 +18,6 @@ def welcome():
 def euclDist(p1, p2, numCompute):
     n = len(p1)
     return math.sqrt(sum([(p1[i]-p2[i])**2 for i in range(n)])), numCompute + 1
-
-def sortPair(points, idx):
-    points = sorted(points, key=lambda x: x[idx])
-    return points
 
 def closestPairBF(points, numCompute):
     n = len(points)
@@ -66,8 +63,9 @@ def closestPairDnC(points, idx, numCompute):
     idx = (idx + 1) % len(points[0])
     shortestDist = math.inf
     closestPair = None
+    
+    points = quicksort(points, idx)
 
-    points = sortPair(points, idx)
     mid = len(points)//2
     leftHalf = points[:mid]
     rightHalf = points[mid:]
@@ -102,15 +100,15 @@ def printClosestPoint(type, pair, numCompute, distance, time1, time2):
 def readPoints(filePath):
     with open(filePath, 'r') as file:
         # Membaca baris pertama untuk mendapatkan besar dimensi dan jumlah titik
-        dimensions = tuple(map(int, file.readline().split()))        
-        tuples = ()
+        dimensions = list(map(int, file.readline().split()))        
+        points = []
         check = True
         for i in range(dimensions[1]):
             rowValues = tuple(map(float, file.readline().replace(',', ' ').split()))
             if len(rowValues) != dimensions[0] :
                 check = False
-            tuples += rowValues,
-    return dimensions[0], dimensions[1],check, tuples
+            points += rowValues,
+    return dimensions[0], dimensions[1],check, points
 
 def getClosestPoint(points):
     time1 = time.perf_counter()
