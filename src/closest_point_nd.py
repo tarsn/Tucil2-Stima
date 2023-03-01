@@ -27,13 +27,13 @@ def getSystemInfo():
     numCores = psutil.cpu_count()
 
     print("\033[96m"+"\nSytem Information"+"\033[0m")
-    print("Operating System          : ", osName)
-    print("Operating System Version  : ", osVersion)
-    print("Laptop Name               : ", laptopName)
-    print("CPU                       : ", cpu)
-    print("Number of Processors      : ", numCores)
-    print("Machine                   : ", machine)
-    print("RAM                       : ", ram)
+    print("Operating System            :", osName)
+    print("Operating System Version    :", osVersion)
+    print("Laptop Name                 :", laptopName)
+    print("CPU                         :", cpu)
+    print("Number of Processors        :", numCores)
+    print("Machine                     :", machine)
+    print("RAM                         :", ram)
 
 # getSystemInfo()
 
