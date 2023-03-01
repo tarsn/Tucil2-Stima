@@ -1,6 +1,8 @@
 import math
 import time
 from quicksort import quicksort
+import platform
+import psutil
 
 def welcome():
     print()
@@ -13,7 +15,27 @@ def welcome():
     print("\033[36m" + "         / __ \/ /_   / /_/ / __ \/ / __ \/ __/ ___/             " + "\033[0m")                                                             
     print("\033[37m" + "        / /_/ / __/  / ____/ /_/ / / / / / /_(__  )              " + "\033[0m")                                                             
     print("\033[37m" + "        \____/_/    /_/    \____/_/_/ /_/\__/____/               " + "\033[0m")
-    print()                                                             
+    print()                              
+
+def getSystemInfo():
+    osName = platform.uname().system
+    osVersion = platform.version()
+    laptopName = platform.node()
+    machine = platform.machine()
+    ram = str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
+    cpu = platform.processor()
+    numCores = psutil.cpu_count()
+
+    print("\033[96m"+"\nSytem Information"+"\033[0m")
+    print("Operating System          : ", osName)
+    print("Operating System Version  : ", osVersion)
+    print("Laptop Name               : ", laptopName)
+    print("CPU                       : ", cpu)
+    print("Number of Processors      : ", numCores)
+    print("Machine                   : ", machine)
+    print("RAM                       : ", ram)
+
+# getSystemInfo()
 
 def euclDist(p1, p2, numCompute):
     n = len(p1)

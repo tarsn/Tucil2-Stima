@@ -17,6 +17,16 @@ This program's main goal is to create a program that finds the nearest pair of p
 
 ## Requirement
 - **Python 3**
+
+  ### Depedencies
+  - matplotlib
+  - time
+  - math
+  - platform
+  - psutil
+  - os
+
+
 ## How to Run
 Open Command Line from the parent directory and execute the file using the following command.
 

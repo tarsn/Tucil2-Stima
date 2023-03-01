@@ -1,10 +1,7 @@
 import random
 import os.path
 from visualizer_3d import *
-from closest_point_nd import welcome 
-from closest_point_nd import readPoints 
-from closest_point_nd import getClosestPoint 
-from closest_point_nd import printClosestPoint
+from closest_point_nd import welcome, getSystemInfo, readPoints, getClosestPoint, printClosestPoint
 
 welcome()
 inp1 = int(input("\nInput Terminal              : 1\nInput file                  : 2\n\033[33m>>> \033[0m"))
@@ -31,6 +28,7 @@ else :
 if (n < 1 or p < 2 or check == False):
     print("\033[31m"+"\nInvalid input. Exiting...\n"+"\033[0m")
 else :   
+    getSystemInfo()
     solution = getClosestPoint(points)
     printClosestPoint("Divide and Conquer", solution[0], solution[2], solution[4], solution[6], solution[7])
     printClosestPoint("Brute Force", solution[1], solution[3], solution[5], solution[7], solution[8])
