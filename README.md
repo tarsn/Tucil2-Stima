@@ -45,5 +45,7 @@ The program is finished.
 |---|---|---|
 | Program can be compiled without error | ✓ |   |
 | Program successfully run | ✓ |   |
-| The program can read input / generate itself and provide output | ✓ |   |
+| The program can read input / generate itself | ✓ |   |
 | The solution provided by the program is correct | ✓ |  |
+| Bonus 1 (3D Visualizer) | ✓ |  |
+| Bonus 2 (Closest pair in n Dimension) | ✓ |  |
